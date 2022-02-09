@@ -50,13 +50,15 @@ cd pnc/src/
 ```
 推荐：克隆此项目源码canbus、common、control...全部移动到pnc/src路径下(后面有.表示clone到当前目录下)
 ```bash
-git clone git@github.com:snail333/planning-control.git .
+(从github获取)git clone git@github.com:snail333/planning-control.git .
+(或从gitee获取)git clone git@gitee.com:zhangchunxinha/planning-control.git .
 ```
 __注意__： 使用ssh克隆代码库需要设置SSH公钥。
 
 或使用下面的命令克隆代码库：
 ```bash
-git clone https://github.com/snail333/planning-control.git .
+(从github获取)git clone https://github.com/snail333/planning-control.git .
+(或从gitee获取)git clone https://gitee.com/zhangchunxinha/planning-control.git .
 ```
 
 编译
