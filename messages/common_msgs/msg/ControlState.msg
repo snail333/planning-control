@@ -1,0 +1,7 @@
+float32 targetangle
+float32 steer_angle
+int8 shiftlvlposition
+float32 velocity
+int8 epb_status
+float32 vehicle_accel
+int8 system_status

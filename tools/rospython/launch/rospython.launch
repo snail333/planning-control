@@ -1,0 +1,8 @@
+<!-- -->
+<launch>
+
+  <node pkg="rospython" type="rospython.py" name="rospython_node" output="screen">
+  </node>
+
+</launch>
+

@@ -1,0 +1,8 @@
+float32 steerangle
+float32 speed
+int8 shift_position
+int8 epb_status
+int8 current_drive_mode
+int8 control_switch_state
+float32 vehcle_accel
+float32 break_pressure

@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>pid_pursuit</name>
+  <version>1.12.0</version>
+  <description>The pid_pursuit package</description>
+  <maintainer email="control@163.com">control</maintainer>
+  <license>Apache 2</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>common_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>libtrajectory_follower</depend>
+  <depend>roscpp</depend>
+  <depend>rostest</depend>
+  <depend>rosunit</depend>
+  <depend>std_msgs</depend>
+  <depend>tf2</depend>
+  <depend>tf</depend>
+  <depend>roslint</depend>
+
+</package>

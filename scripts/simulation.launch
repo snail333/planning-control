@@ -1,0 +1,14 @@
+<!---->
+<launch>
+
+ <include file="$(find simulator)/launch/simulator.launch" />
+ <include file="$(find trajectory_maker)/launch/trajectory_loader.launch" />
+ <include file="$(find lane_select)/launch/lane_select.launch" />
+ <include file="$(find motion_planner)/launch/velocity_set.launch" />
+ <!-- <include file="$(find mpc_follower)/launch/mpc_follower.launch" /> -->
+ <include file="$(find pid_pursuit)/launch/pid_pursuit.launch" />
+ <include file="$(find static_tf)/launch/map_to_world.launch" />
+ <include file="$(find common_configs)/launch/lexus.launch" />
+ <node pkg="rviz" type="rviz" name="default_rviz" args="-d $(find common_configs)/rviz/sim_default.rviz" />
+
+</launch>

@@ -1,0 +1,4 @@
+bool update
+float32 wheelspeed_lr_pluse
+float32 wheelspeed_rr_pluse
+uint8 pluse_mask

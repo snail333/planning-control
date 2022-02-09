@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>trajectory_maker</name>
+  <version>1.12.0</version>
+  <description>The trajectory_maker package</description>
+  <maintainer email="hit623zcx@163.com">control</maintainer>
+  <license>Apache 2</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>common_msgs</depend>
+  <depend>geometry_msgs</depend>
+  <depend>message_filters</depend>
+  <depend>libtrajectory_follower</depend>
+  <depend>nav_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+  <depend>tf</depend>
+</package>

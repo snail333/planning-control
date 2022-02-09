@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="load_csv" default="true" />
+  <arg name="multi_lane_csv" default="$(find trajectory_maker)/mapfiles/jinqiaolu1.csv" />
+  <arg name="replanning_mode" default="true" />                <!--重规划路径点-->
+  <arg name="resample_mode" default="True" />                   <!--重采样路径点-->
+  <arg name="resample_interval" default="1.0" />                <!--采样间隔-->
+  <arg name="replan_curve_mode" default="True" />              <!--重规划曲线-->
+  <arg name="overwrite_vmax_mode" default="true" />            <!--路径点全设置最大速度-->
+  <arg name="replan_endpoint_mode" default="True" />            <!--终点的速度-->
+  <arg name="velocity_max" default="30" />                      <!--最大速度km/h-->
+  <arg name="curvel_max" default="30" />                      <!--弯道最大速度km/h-->
+  <arg name="radius_thresh" default="20" />                     <!--转弯半径阈值-->
+  <arg name="radius_min" default="5" />                         <!--最小半径-->
+  <arg name="velocity_min" default="4" />                       <!--最小速度-->
+  <arg name="accel_limit" default="0.8" />                      <!--加减速限制-->
+  <arg name="decel_limit" default="0.6" />                      <!---->
+  <arg name="velocity_offset" default="0" />                    <!--速度限制延时几个点-->
+  <arg name="braking_distance" default="2" />                   <!--终点前减速的路径点-->
+  <arg name="end_point_offset" default="5" />                   <!--终点前速度为零的路径点个数-->
+
+  <!-- rosrun trajectory_maker trajectory_maker _multi_lane_csv:="path file" -->
+   <node pkg="trajectory_maker" type="trajectory_loader" name="trajectory_loader" output="screen" if="$(arg load_csv)">
+    <param name="multi_lane_csv" value="$(arg multi_lane_csv)" />
+  </node>
+  <node pkg="trajectory_maker" type="trajectory_replanner" name="trajectory_replanner" output="screen">
+    <param name="replanning_mode" value="$(arg replanning_mode)" />
+    <param name="resample_mode" value="$(arg resample_mode)" />
+    <param name="resample_interval" value="$(arg resample_interval)" />
+    <param name="replan_curve_mode" value="$(arg replan_curve_mode)" />
+    <param name="overwrite_vmax_mode" value="$(arg overwrite_vmax_mode)" />
+    <param name="replan_endpoint_mode" value="$(arg replan_endpoint_mode)" />
+    <param name="velocity_max" value="$(arg velocity_max)" />
+    <param name="curvel_max" value="$(arg curvel_max)" />
+    <param name="radius_thresh" value="$(arg radius_thresh)" />
+    <param name="radius_min" value="$(arg radius_min)" />
+    <param name="velocity_min" value="$(arg velocity_min)" />
+    <param name="accel_limit" value="$(arg accel_limit)" />
+    <param name="decel_limit" value="$(arg decel_limit)" />
+    <param name="velocity_offset" value="$(arg velocity_offset)" />
+    <param name="braking_distance" value="$(arg braking_distance)" />
+    <param name="end_point_offset" value="$(arg end_point_offset)" />
+  </node>
+  <node pkg="trajectory_maker" type="trajectory_marker_publisher" name="trajectory_marker_publisher" />
+</launch>

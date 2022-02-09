@@ -1,0 +1,10 @@
+float32 targetspeed
+float32 targetaccelation
+float32 targettorque
+float32 targetpressure
+int8 actuatormode
+int8 shiftposition
+int8 emergency_obstacle
+bool epbflag
+bool brakelight
+bool reverselight

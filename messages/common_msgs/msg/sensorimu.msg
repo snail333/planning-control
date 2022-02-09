@@ -1,0 +1,13 @@
+bool update
+uint32 timetag
+float64 utctime
+float64 gyro_x
+float64 gyro_y
+float64 gyro_z
+float64 acce_x
+float64 acce_y
+float64 acce_z
+float64 temperature
+float64 heading
+float64 pitch
+float64 roll

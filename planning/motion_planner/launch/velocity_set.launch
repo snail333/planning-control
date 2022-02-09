@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="points_topic" default="vscan_points" />                   <!--vscan_points 接收滤出地面点云的Topic-->
+  <arg name="velocity_offset" default="1.2" />                          <!--避免突然加速的速度偏移量m/s-->
+  <arg name="decelerate_vel_min" default="0.83" />                       <!--减速到velocity的最小值m/s-->
+  <arg name="remove_points_upto" default="2.0" />                       <!--滤出车辆周围2.3米内的点云-->
+  <arg name="stop_distance_obstacle" default="10.0" />                  <!--到障碍物的停止距离-->
+  <arg name="stop_distance_stopline" default="10.0" />                   <!--到停止线的停止距离-->
+  <arg name="detection_range" default="0.75" />                          <!--障碍物在范围内,停止-->
+  <arg name="points_threshold" default="30" />                          <!--障碍物在detection_range内的点云数量阈值-->
+  <arg name="detection_height_top" default="0.2" />                     <!--点云检测范围z上限-->
+  <arg name="detection_height_bottom" default="-1.3" />                 <!--点云检测范围z下限-->
+  <arg name="deceleration_obstacle" default="0.6" />                    <!--遇障碍物减速度-->
+  <arg name="deceleration_stopline" default="0.6" />                    <!--遇停止线的减速度-->
+  <arg name="acceleration" default="0.8" />                             <!--加速度-->
+  <arg name="velocity_change_limit" default="10" />                  <!--避免突然减速的速度偏移量km/h-->
+  <arg name="deceleration_range" default="0.3" />                         <!--障碍物在detection_range外到此范围内,减速-->
+  <arg name="temporal_waypoints_size" default="50" />                  <!--局部路径点数量-->
+  <arg name="safety_waypoints_size" default="50" />                  <!--局部路径点数量-->
+  <arg name="closest_search_size" default="30" />                 <!--搜索closest_waypoints-->
+
+  <node pkg="motion_planner" type="velocity_set" name="velocity_set" output="screen">
+    <param name="points_topic" value="$(arg points_topic)" />
+    <param name="velocity_offset" value="$(arg velocity_offset)" />
+    <param name="decelerate_vel_min" value="$(arg decelerate_vel_min)" />
+    <param name="remove_points_upto" value="$(arg remove_points_upto)" />
+    <param name="stop_distance_obstacle" value="$(arg stop_distance_obstacle)" />
+    <param name="stop_distance_stopline" value="$(arg stop_distance_stopline)" />
+    <param name="detection_range" value="$(arg detection_range)" />
+    <param name="points_threshold" value="$(arg points_threshold)" />
+    <param name="detection_height_top" value="$(arg detection_height_top)" />
+    <param name="detection_height_bottom" value="$(arg detection_height_bottom)" />
+    <param name="deceleration_obstacle" value="$(arg deceleration_obstacle)" />
+    <param name="deceleration_stopline" value="$(arg deceleration_stopline)" />
+    <param name="acceleration" value="$(arg acceleration)" />
+    <param name="velocity_change_limit" value="$(arg velocity_change_limit)" />
+    <param name="deceleration_range" value="$(arg deceleration_range)" />
+    <param name="temporal_waypoints_size" value="$(arg temporal_waypoints_size)" />
+    <param name="safety_waypoints_size" value="$(arg safety_waypoints_size)" />
+    <param name="closest_search_size" value="$(arg closest_search_size)" />
+  </node>
+
+</launch>

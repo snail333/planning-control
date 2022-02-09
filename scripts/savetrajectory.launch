@@ -1,0 +1,10 @@
+<!---->
+<launch>
+
+ <include file="$(find gnss)/launch/gnss_driver.launch" />
+ <include file="$(find rtk)/launch/rtk_localization.launch" />
+ <include file="$(find trajectory_maker)/launch/trajectory_saver.launch" />
+ <include file="$(find common_configs)/launch/lexus.launch" />
+ <node pkg="rviz" type="rviz" name="default_rviz" args="-d $(find common_configs)/rviz/default.rviz" />
+
+</launch>

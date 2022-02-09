@@ -1,0 +1,15 @@
+<!-- -->
+<launch>
+  	<arg name="baudRate" default="115200" />
+	<arg name="serialPort" default="/dev/ttyS0" />
+	<arg name="loopFrep" default="50" />
+	<arg name="deDug" default="false" />
+
+	<node pkg="gnss" name="gnss" type="gnss" output="screen" >
+    	<param name="baudRate" value="$(arg baudRate)"/>
+		<param name="serialPort" value="$(arg serialPort)"/>
+		<param name="loopFrep" value="$(arg loopFrep)"/>
+		<param name="deDug" value="$(arg deDug)"/>
+	</node>
+
+</launch>

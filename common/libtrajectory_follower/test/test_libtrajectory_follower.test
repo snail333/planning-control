@@ -1,0 +1,5 @@
+<launch>
+
+  <test test-name="test-libtrajectory_follower" pkg="libtrajectory_follower" type="test-libtrajectory_follower" name="test"/>
+
+</launch>

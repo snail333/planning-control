@@ -1,0 +1,16 @@
+<!-- -->
+<launch>
+  <arg name="m_canetip1" default="192.168.2.178"/>                       <!--CANet的通信IP-->
+  <arg name="m_canetport1" default="4001"/>                              <!--CANet端口号-->
+  <arg name="m_pcip1" default="192.168.2.100"/>                           <!--主机通信IP-->
+  <arg name="m_pcport1" default="4001"/>                                  <!--主机端口号-->
+
+
+  <!-- rosrun canet canet -->
+  <node pkg="canet" type="canet" name="canet" output="screen">
+    <param name="m_canetip1" value="$(arg m_canetip1)"/>
+    <param name="m_canetport1" value="$(arg m_canetport1)"/>
+    <param name="m_pcip1" value="$(arg m_pcip1)"/>
+    <param name="m_pcport1" value="$(arg m_pcport1)"/>
+  </node>
+</launch>

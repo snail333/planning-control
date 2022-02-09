@@ -1,0 +1,19 @@
+<!-- -->
+<launch>
+
+  <arg name="save_finename" default="$(find trajectory_maker)/mapfiles/jin.csv" />       <!--保存文件名-->
+  <arg name="interval" default="1" />                                                     <!--路点间隔距离-->
+  <arg name="localization_topic" default="localization" />                                <!--定位信息-->
+  <arg name="vehicle_topic" default="pcican" />                                           <!--车辆信息-->
+  <arg name="save_velocity" default="true" />
+
+
+  <node pkg="trajectory_maker" type="trajectory_saver" name="trajectory_saver" output="screen" >
+    <param name="save_filename" value="$(arg save_finename)" />
+    <param name="interval" value="$(arg interval)" />
+    <param name="localization_topic" value="$(arg localization_topic)" />
+    <param name="vehicle_topic" value="$(arg vehicle_topic)" />
+    <param name="save_velocity" value="$(arg save_velocity)" />
+  </node>
+
+</launch>

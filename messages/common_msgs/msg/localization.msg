@@ -1,0 +1,9 @@
+Header header
+LLH llh
+Pose pose
+Twist twist
+Vector3 acceleration
+float64 speed
+NavStatus nav_status
+DRPoseWithTime drpose
+bool is_lidar_open

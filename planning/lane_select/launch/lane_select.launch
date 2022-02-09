@@ -1,0 +1,10 @@
+<!-- -->
+<launch>
+  <arg name="search_closest_waypoint_minimum_dt" default="5" doc="Minimum number of lookahead waypoints when searching closest_waypoint"/>
+  <arg name="distance_threshold" default="30" />      <!--最近点距离阈值-->
+
+  <node pkg="lane_select" type="lane_select" name="lane_select" output="screen">
+    <param name="search_closest_waypoint_minimum_dt" value="$(arg search_closest_waypoint_minimum_dt)" />
+    <param name="distance_threshold" value="$(arg distance_threshold)" />
+  </node>
+</launch>

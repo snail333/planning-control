@@ -1,0 +1,12 @@
+<!-- -->
+<launch>
+<arg name="zone_lat" default="40.0986059"/>
+<arg name="zone_lon" default="116.6245563"/>
+
+  <node pkg="rtk" type="rtk_localization" name="rtk_localization" output="screen">
+    <param name="zone_lat" value="$(arg zone_lat)"/>
+    <param name="zone_lon" value="$(arg zone_lon)"/>
+  </node>
+
+</launch>
+

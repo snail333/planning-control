@@ -1,0 +1,45 @@
+<!-- -->
+<launch>
+  <arg name="is_linear_interpolation" default="True"/>                       <!--线性插值计算预瞄点-->
+  <arg name="publishes_for_steering_robot" default="False"/>                 <!--发布”ctrl_raw“-->
+  <arg name="add_virtual_end_waypoints" default="False"/>                    <!--增加虚拟结束路点-->
+  <arg name="const_lookahead_distance" default="4.0"/>                       <!--velocity_source=1时使用固定预瞄距离-->
+  <arg name="const_velocity" default="5.0"/>                                 <!--velocity_source=1时使用固定预瞄速度-->
+  <arg name="lookahead_ratio_a" default="0.08228"/>                            <!--预瞄距离计算系数-->
+  <arg name="lookahead_ratio_b" default="0.8812"/>                              <!--预瞄距离计算系数-->
+  <arg name="lookahead_ratio_c" default="1.928"/>                               <!--预瞄距离计算系数-->
+  <arg name="minimum_lookahead_distance" default="4.5"/>                     <!--最小预瞄距离-->
+  <arg name="vehicle_info/wheel_base" default="2.915"/>                       <!--轴距-->
+  <arg name="vehicle_info/driver_ratio" default="15.4"/>                       <!--传动比-->
+  <arg name="dtime" default="0.03"/>                                         <!--pid采样时间-->
+  <arg name="integrator_level" default="0.1"/>                               <!--pid积分限制-->
+  <arg name="kp" default="0.7"/>                                            <!--pid比例参数-->
+  <arg name="ki" default="0.3"/>                                            <!--pid积分参数-->
+  <arg name="kd" default="0"/>                                              <!--pid微分参数-->
+  <arg name="loop_rate" default="30"/>                                      <!--频率-->
+
+  <!-- 0 = waypoints, 1 = provided constant velocity -->
+  <arg name="velocity_source" default="0"/>
+
+  <!-- rosrun waypoint_follower pid_pursuit -->
+  <node pkg="pid_pursuit" type="pid_pursuit" name="pid_pursuit" output="screen">
+    <param name="is_linear_interpolation" value="$(arg is_linear_interpolation)"/>
+    <param name="publishes_for_steering_robot" value="$(arg publishes_for_steering_robot)"/>
+    <param name="add_virtual_end_waypoints" value="$(arg add_virtual_end_waypoints)"/>
+    <param name="const_lookahead_distance" value="$(arg const_lookahead_distance)"/>
+    <param name="const_velocity" value="$(arg const_velocity)"/>
+    <param name="lookahead_ratio_a" value="$(arg lookahead_ratio_a)"/>
+    <param name="lookahead_ratio_b" value="$(arg lookahead_ratio_b)"/>
+    <param name="lookahead_ratio_c" value="$(arg lookahead_ratio_c)"/>
+    <param name="minimum_lookahead_distance" value="$(arg minimum_lookahead_distance)"/>
+    <param name="vehicle_info/wheel_base" value="$(arg vehicle_info/wheel_base)"/>
+    <param name="vehicle_info/driver_ratio" value="$(arg vehicle_info/driver_ratio)"/>
+    <param name="dtime" value="$(arg dtime)"/>
+    <param name="integrator_level" value="$(arg integrator_level)"/>
+    <param name="kp" value="$(arg kp)"/>
+    <param name="ki" value="$(arg ki)"/>
+    <param name="kd" value="$(arg kd)"/>
+    <param name="loop_rate" value="$(arg loop_rate)"/>
+    <param name="velocity_source" value="$(arg velocity_source)"/>
+  </node>
+</launch>

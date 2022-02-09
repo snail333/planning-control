@@ -1,0 +1,8 @@
+<!-- -->
+<launch>
+
+  <!-- rosrun pciecan pciecan -->
+  <node pkg="pciecan" type="pciecan" name="pciecan" output="screen">
+  
+  </node>
+</launch>

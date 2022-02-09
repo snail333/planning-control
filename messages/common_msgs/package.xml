@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>common_msgs</name>
+  <version>1.13.0</version>
+  <description>The common_msgs package</description>
+  <maintainer email="hit623zcx@163.com">baic</maintainer>
+  <license>Apache 2</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>message_generation</build_depend>
+
+  <depend>geometry_msgs</depend>
+  <depend>jsk_recognition_msgs</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+
+  <exec_depend>message_runtime</exec_depend>
+</package>

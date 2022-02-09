@@ -1,0 +1,12 @@
+float32 x
+float32 y
+float64 xg
+float64 yg
+float32 angle
+float32 angleglobal
+float32 velocity
+float32 a
+float32 t
+float32 curvature
+float32 length
+int8 direction

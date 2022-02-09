@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<launch>
+    <!--map to world tf -->
+    <node pkg="tf"  type="static_transform_publisher" name="map_to_world"  args="-577.6667 5160 0 0 0 0 /world /map 10" />
+</launch>
